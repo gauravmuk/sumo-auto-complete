@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="sumoLogic">
+<head>
+    <meta charset="UTF-8">
+    <title>Auto Complete Directive :: Sumo Logic</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="lib/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/autoCompleteDirective.js"></script>
+</head>
+
+<body ng-controller="AppController">
+    <form name="employeeWelcomeForm" novalidate class="dialog-box" ng-submit="onFormSubmit()">
+        <h1 class="employee-heading padding--bottom">Select an Employee</h1>
+
+        <a href="javascript:void(0);" ng-click="onCloseButtonClick()" class="btn-close">X</a>
+
+        <div class="row">
+            <label class="strong">
+                <input type="checkbox" ng-model="shouldSendWelcomeEmail" />
+                Send welcome email to employee
+            </label>
+        </div>
+
+        <div class="row">
+            <label class="strong">Select a Team in the Organization</label>
+            <div class="relative">
+                <input sumo-logic-auto-complete
+                       class="push-half--top full--width"
+                       placeholder="Select Team..."
+                       type="text"
+                       options-list="teamsList"
+                       validation-key="invalidTeamSelection"
+                       ng-model="currentSelection.selectedTeam" />
+                <span ng-show="employeeWelcomeForm.$submitted && employeeWelcomeForm.$error.invalidTeamSelection" class="error--msg">Invalid Team Selection</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <label class="strong">Select an Employee</label>
+            <div class="relative">
+                <input sumo-logic-auto-complete
+                       placeholder="Select Employee..."
+                       class="push-half--top full--width"
+                       type="text"
+                       options-list="getEmployeesList()"
+                       validation-key="invalidEmployeeSelection"
+                       ng-model="currentSelection.selectedEmployee" />
+                <span ng-show="employeeWelcomeForm.$submitted && employeeWelcomeForm.$error.invalidEmployeeSelection" class="error--msg">Invalid Employee Selection</span>
+            </div>
+        </div>
+
+        <div class="row">
+            <input type="submit" value="OK" class="btn btn-submit push-half--left float-right">
+            <input type="button" value="Cancel" class="btn float-right" ng-click="onCloseButtonClick()">
+        </div>
+    </form>
+</body>
+</html>

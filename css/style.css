@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    font-weight: 300;
+    line-height: 20px;
+    color: #56555D;
+}
+
+input, label {
+    font-size: 14px;
+}
+
+input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+}
+
+.dialog-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 500px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    border: 1px solid white;
+    background-color: #eff0f1;
+    padding: 20px;
+}
+
+.btn-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    text-decoration: none;
+    color: darkgrey;
+}
+
+.employee-heading {
+    font-weight: 400;
+    color: #3eaae8;
+}
+
+.padding--bottom {
+    padding-bottom: 20px;
+}
+
+.row {
+    margin: 20px 0;
+}
+
+.hidden {
+    display: none;
+}
+
+ul.dropdown {
+    list-style: none;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    border: 1px solid #d7d8d8;
+}
+
+ul.dropdown li.selected {
+    width: 100%;
+    color: white;
+    background-color: #3eaae8;
+    padding: 10px 20px;
+}
+
+ul.dropdown li {
+    width: 100%;
+    color: black;
+    background-color: white;
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #d7d8d8;
+    border: none;
+}
+
+input[type="text"]::-webkit-input-placeholder {
+    color: black;
+}
+
+input[type="text"]:hover {
+    border-color: #3eaae8;
+}
+
+.push-half--top {
+    margin-top: 10px;
+}
+
+.push-half--left {
+    margin-left: 10px;
+}
+
+.relative {
+    position: relative;
+}
+
+.full--width {
+    width: 100%;
+}
+
+.btn {
+    width: 100px;
+    cursor: pointer;
+    padding: 10px;
+    background-color: #d7d8d8;
+    border: none;
+
+}
+
+.btn-submit {
+    background-color: #3eaae8;
+    color: white;
+}
+
+.float-right {
+    float: right;
+}
+
+.strong {
+    font-weight: bold;
+}
+
+.error--msg {
+    font-size: 12px;
+    color: red;
+}
